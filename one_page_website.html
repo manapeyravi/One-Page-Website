@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Website</title>
+    <style>
+        /* Basic Lightbox CSS styling */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .row { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .row img { cursor: pointer; transition: 0.3s; width: 200px; height: 130px; object-fit: cover; }
+        .row img:hover { opacity: 0.7; }
+        .modal { display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+        .modal-content { position: relative; margin: auto; padding: 0; width: 80%; max-width: 700px; }
+        .mySlides { display: none; }
+        .mySlides img { width: 100%; height: auto; }
+        .close { color: white; position: absolute; top: 10px; right: 25px; font-size: 35px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: #999; }
+    </style>
+</head>
+<body>
+
+    <h1>My One-Page Website</h1>
+    <p>Click on any image below to open the lightbox gallery.</p>
+
+    <!-- Image Thumbnails -->
+    <div class="row">
+        <img src="https://picsum.photos/id/1015/600/400" onclick="openModal();currentSlide(1)" alt="Nature 1">
+        <img src="https://picsum.photos/id/1016/600/400" onclick="openModal();currentSlide(2)" alt="Nature 2">
+        <img src="https://picsum.photos/id/1018/600/400" onclick="openModal();currentSlide(3)" alt="Nature 3">
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="https://picsum.photos/id/1015/800/600" alt="Nature 1">
+            </div>
+            <div class="mySlides">
+                <img src="https://picsum.photos/id/1016/800/600" alt="Nature 2">
+            </div>
+            <div class="mySlides">
+                <img src="https://picsum.photos/id/1018/800/600" alt="Nature 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="JS/one_page_website.js"></script>
+</body>
+</html>
